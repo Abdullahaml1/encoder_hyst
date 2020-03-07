@@ -75,6 +75,7 @@ int main()
 uint8_t hysteresis_level_evaluator(uint8_t current_prcent, vector  < Hys_range*> & threshold )
 {
     static uint8_t last_percent = 0;
+    static uint8_t last_level   = 0;
     uint8_t level = 0;
 
 
@@ -97,7 +98,10 @@ uint8_t hysteresis_level_evaluator(uint8_t current_prcent, vector  < Hys_range*>
         {
            
             last_percent = current_prcent;
-            return threshold[i] -> level;
+            if (last_level == threshold[i] -> level)
+            {
+                return threshold[i] -> level;
+            }
         }
 
         else if (current_prcent > mid)
@@ -107,6 +111,7 @@ uint8_t hysteresis_level_evaluator(uint8_t current_prcent, vector  < Hys_range*>
 
     } 
     last_percent = current_prcent;
+    last_level = level;
     return level;
 
 }
