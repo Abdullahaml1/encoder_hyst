@@ -72,7 +72,12 @@ int main()
 
 /**
  *[the function takes a vector of strctures that represents the upper and lower levels for ] 
-*/
+ * Inputs: 
+ *        current_prcent: from 0 to 100 
+ *        threshold:      represents the vector of all levels 
+ * Returns:
+ *        The level indicated in (threshold[i]-> level)
+ */
 uint8_t hysteresis_level_evaluator(uint8_t current_prcent, vector  < Hys_range*> & threshold )
 {
     static uint8_t last_percent = 0;
