@@ -16,11 +16,12 @@ typedef struct Hys_range
     public:
 
     Hys_range(uint8_t _level, uint8_t _upper, uint8_t _lower):level(_level),
-                upper(_upper), lower(_lower){};
+                upper(_upper), lower(_lower){}
 
 
-     // level form 0 to 4
+    // level form 0 to 4
     uint8_t level;
+    
     //presentage form 0 to 100 
     uint8_t upper;
     uint8_t lower;
@@ -49,19 +50,19 @@ int main()
 
 
     uint8_t level = hysteresis_level_evaluator(5, threshold);
-    cout << "Last Input: " << 0 << "  Current Input: "<<  5 <<"  Level: "<< (int)level << endl;
+    cout << "Last Input: " << 0 << "  Current Input: "<<  5 <<"  Level: "<< static_cast<int>(level) << endl;
 
     level = hysteresis_level_evaluator(45, threshold);
-    cout << "Last Input: " << 5 << "  Current Input: "<<  45 <<" Level: "<< (int)level << endl;
+    cout << "Last Input: " << 5 << "  Current Input: "<<  45 <<" Level: "<< static_cast<int>(level) << endl;
 
     level = hysteresis_level_evaluator(36, threshold);
-    cout << "Last Input: " << 45 << " Current Input: "<<  36 <<" Level: "<< (int)level << endl;
+    cout << "Last Input: " << 45 << " Current Input: "<<  36 <<" Level: "<< static_cast<int>(level) << endl;
 
     level = hysteresis_level_evaluator(0, threshold);
-    cout << "Last Input: " << 36 << " Current Input: "<<  0 <<"  Level: "<< (int)level << endl;
+    cout << "Last Input: " << 36 << " Current Input: "<<  0 <<"  Level: "<< static_cast<int>(level) << endl;
 
     level = hysteresis_level_evaluator(0, threshold);
-    cout << "Last Input: " << 0 << "  Current Input: "<<  0 <<"  Level: "<< (int)level << endl;
+    cout << "Last Input: " << 0 << "  Current Input: "<<  0 <<"  Level: "<< static_cast<int>(level) << endl;
 
     return 0;
 
