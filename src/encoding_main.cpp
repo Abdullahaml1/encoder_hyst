@@ -63,7 +63,7 @@ int main()
     level = hysteresis_level_evaluator(0, threshold);
     cout << "Last Input: " << 0 << "  Current Input: "<<  0 <<"  Level: "<< (int)level << endl;
 
-   
+    return 0;
 
 
 }
