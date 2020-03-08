@@ -5,6 +5,9 @@
 
 using namespace std;
 
+/**
+ * For debug printing uncomment the line below
+ */
 //#define DEBUG_PRINT
 
 /*
